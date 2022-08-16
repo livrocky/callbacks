@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 
 // child
 
-const Callback = ({ getColor }) => {
+const Callback = ({ handleColorChange }) => {
   const [activeColor, setActiveColor] = useState();
 
   const handleChange = (e) => {
     const { value } = e.target;
     setActiveColor(value);
-    getColor(value);
+    handleColorChange(value);
   };
 
   return (

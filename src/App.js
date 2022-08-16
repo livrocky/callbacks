@@ -5,16 +5,17 @@ import Callback from './callback';
 // Parent
 
 function App() {
-  const [UIcolor, setUIColor] = useState(null);
+  const [UIcolor, setUIColor] = useState();
 
-  // our callback function
-  const getColor = (color) => {
+  // callback function
+
+  const handleColorChange = (color) => {
     setUIColor(color);
   };
   return (
     <div className='App'>
       <div className='colorContainer' style={{ background: `${UIcolor}` }}></div>
-      <Callback getColor={getColor} />
+      <Callback handleColorChange={setUIColor} />
     </div>
   );
 }
